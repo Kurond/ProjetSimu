@@ -1,6 +1,7 @@
 package com.polytechtours.systeme;
 
-public class Variables {
+public class Variables 
+{
     int N;
     int Nt;
     int Nc;
