@@ -25,5 +25,9 @@ public class ArriveeCourriel extends Event{
             arriveeCourriel.setDate(date);
             Echeancier.getInstance().ajouterEvenement(arriveeCourriel);
         }
+        //mettre a jour les aires
+        if(variables.N - variables.Nt - variables.Nc > 0){
+            variables.Nc ++;
+        }
     }
 }

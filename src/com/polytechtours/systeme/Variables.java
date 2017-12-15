@@ -2,13 +2,13 @@ package com.polytechtours.systeme;
 
 public class Variables 
 {
-    int N;
-    int Nt;
-    int Nc;
-    int Ntmax;
-    int Qt;
-    int Qc;
-    int NbAppel;
-    int NbCourriel;
-    int TempsInactivite;
+    public int N;
+    public int Nt;
+    public int Nc;
+    public int Ntmax;
+    public int Qt;
+    public int Qc;
+    public int NbAppel;
+    public int NbCourriel;
+    public int TempsInactivite;
 }
