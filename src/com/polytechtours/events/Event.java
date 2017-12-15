@@ -14,6 +14,7 @@ public abstract class Event implements Comparable<Event> {
 	/**
 	 *	Contain the event's code
 	 */
+
 	public abstract void execute(Variables variables);
 	
 	public int compareTo(Event evenement) {
@@ -33,5 +34,9 @@ public abstract class Event implements Comparable<Event> {
 
 	public void setDate(int date) {
 		this.date = date;
+	}
+
+	public int convertHourToSecond(int heure) {
+		return heure * 3600;
 	}
 }
