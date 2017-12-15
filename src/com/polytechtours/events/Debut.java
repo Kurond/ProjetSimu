@@ -2,9 +2,9 @@ package com.polytechtours.events;
 
 import com.polytechtours.systeme.Variables;
 
-public class Début extends Event{
+public class Debut extends Event{
 
-	public Début() {
+	public Debut() {
 		// TODO Auto-generated constructor stub
 	}
 
@@ -13,5 +13,8 @@ public class Début extends Event{
 		// TODO Auto-generated method stub
 		
 	}
+
+	
+	
 
 }
