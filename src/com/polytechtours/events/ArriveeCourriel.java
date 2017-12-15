@@ -28,6 +28,7 @@ public class ArriveeCourriel extends Event{
         //mettre a jour les aires
         if(variables.N - variables.Nt - variables.Nc > 0){
             variables.Nc ++;
+            // ajouter accés courriel
         }
     }
 }
