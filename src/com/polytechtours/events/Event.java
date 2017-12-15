@@ -8,7 +8,7 @@ import com.polytechtours.systeme.Variables;
  * @author Charly
  */
 public abstract class Event implements Comparable<Event> {
-	/** date : store the date in minute. */
+	/** date : store the date in secondes. */
 	private int date;
 
 	/**
