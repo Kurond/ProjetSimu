@@ -20,7 +20,16 @@ public class ArriveeAppel extends Event {
             arriveeAppel.setDate(getDate() + (int)probabilite.exponentielle(convertMinuteToSecond(10)));
             Echeancier.getInstance().ajouterEvenement(arriveeAppel);
         }
-        variables.NbAppel = variables.NbAppel + 1;
+        variables.NbAppel ++;
+
+        //mettre à jour les aires
+
+        if((variables.Nt < variables.Ntmax) && (variables.N - variables.Nt - variables.Nc > 0)){
+            variables.Nt ++;
+            // ajouter accés Appel
+        }
+
+        variables.Qt ++;
     }
 
 

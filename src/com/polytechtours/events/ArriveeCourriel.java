@@ -30,5 +30,7 @@ public class ArriveeCourriel extends Event{
             variables.Nc ++;
             // ajouter accés courriel
         }
+
+        variables.Qc ++;
     }
 }
