@@ -16,12 +16,12 @@ public class ArriveeCourriel extends Event{
 
         if(getDate() >= 28800 && getDate() <= 32400){
             ArriveeCourriel arriveeCourriel = new ArriveeCourriel();
-            int date = (int)probabilite.exponentielle(5*60);
+            int date = (int)probabilite.exponentielle(convertMinuteToSecond(5)) + getDate();
             arriveeCourriel.setDate(date);
             Echeancier.getInstance().ajouterEvenement(arriveeCourriel);
         }else {
             ArriveeCourriel arriveeCourriel = new ArriveeCourriel();
-            int date = (int)probabilite.exponentielle(30);
+            int date = (int)probabilite.exponentielle(30) + getDate();
             arriveeCourriel.setDate(date);
             Echeancier.getInstance().ajouterEvenement(arriveeCourriel);
         }

@@ -39,4 +39,8 @@ public abstract class Event implements Comparable<Event> {
 	public int convertHourToSecond(int heure) {
 		return heure * 3600;
 	}
+
+	public int convertMinuteToSecond(int minute) {
+		return minute * 60;
+	}
 }
