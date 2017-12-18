@@ -54,6 +54,5 @@ public abstract class Event implements Comparable<Event> {
 		var.AireQt += var.Qt * (getDate() - var.DDateSimu);
 		var.AireNc += var.Nc * (getDate() - var.DDateSimu);
 		var.AireNt += var.Nt * (getDate() - var.DDateSimu);
-
 	}
 }

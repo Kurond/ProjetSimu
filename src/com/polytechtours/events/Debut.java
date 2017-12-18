@@ -4,6 +4,7 @@ import com.polytechtours.systeme.Echeancier;
 import com.polytechtours.systeme.Variables;
 import com.polytechtours.utils.Probabilite;
 
+import static com.polytechtours.events.EventsFactory.make_dated;
 import static com.polytechtours.utils.Probabilite.uniform;
 
 /**
@@ -22,6 +23,7 @@ public class Debut extends Event{
 		System.out.println("Debut : " + getDate());
 		
 		// TODO Auto-generated method stub
+
 		Echeancier echancier = Echeancier.getInstance();
 		//Couriel arrivant au debut de la simu
 		variables.Qc = uniform(20, 80);
@@ -35,18 +37,12 @@ public class Debut extends Event{
 		variables.Ntmax = 10;
 		
 		variables.DateSimu = (int)convertHourToSecond(8);
-		variables.DDateSimu =(int)convertHourToSecond(8);
+		variables.DDateSimu =(int)convertHourToSecond(8);	
 		
-		
-		
-		//ajouter les events 
-		ArriveeAppel arrapp = new ArriveeAppel();
-		arrapp.setDate(variables.DateSimu);
-		echancier.ajouterEvenement(arrapp);
-		
-		ArriveeCourriel arrcouriel = new ArriveeCourriel();
-		arrcouriel.setDate(variables.DateSimu);
-		echancier.ajouterEvenement(arrcouriel);
+		//ajouter les events
+		echancier.ajouterEvenement(make_dated(new ArriveeAppel(), variables.DateSimu));
+
+		echancier.ajouterEvenement(make_dated(new ArriveeCourriel(), variables.DateSimu));
 		
 		
 		//ajouter l'event fin

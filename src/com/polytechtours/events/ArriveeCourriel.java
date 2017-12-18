@@ -4,6 +4,7 @@ import com.polytechtours.systeme.Echeancier;
 import com.polytechtours.systeme.Variables;
 import com.polytechtours.utils.Probabilite;
 
+import static com.polytechtours.events.EventsFactory.make_dated;
 import static com.polytechtours.utils.Probabilite.exponentielle;
 
 /**
@@ -15,32 +16,24 @@ public class ArriveeCourriel extends Event{
     public void execute(Variables variables) {
     	System.out.println("Arriv�e Courriel : " + getDate());
 
-        // TODO : change exponentiell
-        if(getDate() >= 28800 && getDate() <= 32400){
-            ArriveeCourriel arriveeCourriel = new ArriveeCourriel();
-            int date = (int)convertMinuteToSecond(exponentielle(5)) + getDate();
-            arriveeCourriel.setDate(date);
-            Echeancier.getInstance().ajouterEvenement(arriveeCourriel);
-        }else {
-            ArriveeCourriel arriveeCourriel = new ArriveeCourriel();
-            int date = (int)convertMinuteToSecond(exponentielle(30)) + getDate();
-            arriveeCourriel.setDate(date);
-            Echeancier.getInstance().ajouterEvenement(arriveeCourriel);
+    	int date;
+        if(getDate() >= convertHourToSecond(8) && getDate() < convertHourToSecond(9)){
+            date = (int)convertMinuteToSecond(exponentielle(0.5f))* + getDate();
+        } else {
+            date = (int)convertMinuteToSecond(exponentielle(5)) + getDate();
         }
+        Echeancier.getInstance().ajouterEvenement(make_dated(new ArriveeCourriel(), date));
         
         variables.NbCourriel++;
         MiseaJourAires(variables);
         
-        if(variables.N - variables.Nt - variables.Nc > 0){
+        if(variables.N - variables.Nt - variables.Nc > 0) {
             variables.Nc ++;
-
-            AccesCouriel accCour = new AccesCouriel();
-            accCour.setDate(getDate());
             
-            Echeancier.getInstance().ajouterEvenement(accCour);
+            Echeancier.getInstance().ajouterEvenement(make_dated(new AccesCouriel(), getDate()));
         }
 
-        variables.Qc ++;
+        variables.Qc++;
         variables.DDateSimu = variables.DateSimu;
     }
 }

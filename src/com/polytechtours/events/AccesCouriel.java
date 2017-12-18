@@ -4,6 +4,9 @@ import com.polytechtours.systeme.Echeancier;
 import com.polytechtours.systeme.Variables;
 import com.polytechtours.utils.Probabilite;
 
+import static com.polytechtours.events.EventsFactory.make_dated;
+import static com.polytechtours.utils.Probabilite.uniform;
+
 public class AccesCouriel extends Event{
 
 	@Override
@@ -13,11 +16,11 @@ public class AccesCouriel extends Event{
 		
 		MiseaJourAires(variables);
 
-		FinCourriel finCouriel = new FinCourriel();
-        int date = Probabilite.uniform(convertMinuteToSecond(3),convertMinuteToSecond(7)) + getDate();
-		finCouriel.setDate(date);
-		Echeancier.getInstance().ajouterEvenement(finCouriel);
-		variables.Qc = variables.Qc - 1;
+		int date = getDate() + uniform(convertMinuteToSecond(3), convertMinuteToSecond(7));
+
+		Echeancier.getInstance().ajouterEvenement(make_dated(new FinCourriel(), date));
+		
+		variables.Qc--;
 		variables.DDateSimu = variables.DateSimu;		
 	}
 
