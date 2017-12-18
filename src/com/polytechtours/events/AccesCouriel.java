@@ -12,10 +12,9 @@ public class AccesCouriel extends Event{
 		System.out.println("Acces Courriel : " + getDate());
 		
 		MiseaJourAires(variables);
-		
-    	Probabilite probabilite = new Probabilite();
+
 		FinCourriel finCouriel = new FinCourriel();
-        int date = probabilite.uniform(convertMinuteToSecond(3),convertMinuteToSecond(7)) + getDate();
+        int date = Probabilite.uniform(convertMinuteToSecond(3),convertMinuteToSecond(7)) + getDate();
 		finCouriel.setDate(date);
 		Echeancier.getInstance().ajouterEvenement(finCouriel);
 		variables.Qc = variables.Qc - 1;

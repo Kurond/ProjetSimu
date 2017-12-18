@@ -4,6 +4,8 @@ import com.polytechtours.systeme.Echeancier;
 import com.polytechtours.systeme.Variables;
 import com.polytechtours.utils.Probabilite;
 
+import static com.polytechtours.utils.Probabilite.exponentielle;
+
 /**
  * Created by mika on 15/12/17.
  */
@@ -11,19 +13,17 @@ public class ArriveeCourriel extends Event{
 
     @Override
     public void execute(Variables variables) {
-    	System.out.println("Arrivée Courriel : " + getDate());
-    	
-        Probabilite probabilite = new Probabilite();
+    	System.out.println("Arrivï¿½e Courriel : " + getDate());
 
         // TODO : change exponentiell
         if(getDate() >= 28800 && getDate() <= 32400){
             ArriveeCourriel arriveeCourriel = new ArriveeCourriel();
-            int date = (int)convertMinuteToSecond(probabilite.exponentielle(5)) + getDate();
+            int date = (int)convertMinuteToSecond(exponentielle(5)) + getDate();
             arriveeCourriel.setDate(date);
             Echeancier.getInstance().ajouterEvenement(arriveeCourriel);
         }else {
             ArriveeCourriel arriveeCourriel = new ArriveeCourriel();
-            int date = (int)convertMinuteToSecond(probabilite.exponentielle(30)) + getDate();
+            int date = (int)convertMinuteToSecond(exponentielle(30)) + getDate();
             arriveeCourriel.setDate(date);
             Echeancier.getInstance().ajouterEvenement(arriveeCourriel);
         }

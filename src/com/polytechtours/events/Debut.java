@@ -4,6 +4,8 @@ import com.polytechtours.systeme.Echeancier;
 import com.polytechtours.systeme.Variables;
 import com.polytechtours.utils.Probabilite;
 
+import static com.polytechtours.utils.Probabilite.uniform;
+
 /**
  * 
  * @author Amine
@@ -20,10 +22,9 @@ public class Debut extends Event{
 		System.out.println("Debut : " + getDate());
 		
 		// TODO Auto-generated method stub
-		Probabilite p =new Probabilite();
 		Echeancier echancier = Echeancier.getInstance();
 		//Couriel arrivant au debut de la simu
-		variables.Qc = p.uniform(20, 80);
+		variables.Qc = uniform(20, 80);
 		variables.Qt = 0;
 		variables.NbCourriel = variables.Qc;
 		variables.NbAppel = variables.Qt;

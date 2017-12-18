@@ -4,6 +4,8 @@ import com.polytechtours.systeme.Echeancier;
 import com.polytechtours.systeme.Variables;
 import com.polytechtours.utils.Probabilite;
 
+import static com.polytechtours.events.EventsFactory.make_dated;
+
 /**
  * Created by mika on 18/12/17.
  */
@@ -19,11 +21,10 @@ public class AccesAppel extends Event {
     	System.out.println("Acces Appel : " + getDate());
     	
         MiseaJourAires(variables);
-        Probabilite probabilite = new Probabilite();
-        FinAppel finAppel = new FinAppel();
-        int date = probabilite.uniform(convertMinuteToSecond(5),convertMinuteToSecond(15)) + getDate();
-        finAppel.setDate(date);
-        Echeancier.getInstance().ajouterEvenement(finAppel);
+
+        int date = Probabilite.uniform(convertMinuteToSecond(5),convertMinuteToSecond(15)) + getDate();
+        Echeancier.getInstance().ajouterEvenement(make_dated(new FinAppel(), date));
+
         variables.Qt --;
         variables.DDateSimu = variables.DateSimu;
     }
