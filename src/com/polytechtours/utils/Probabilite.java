@@ -2,6 +2,8 @@ package com.polytechtours.utils;
 
 import java.util.Random;
 
+import com.polytechtours.systeme.Variables;
+
 public class Probabilite 
 {
 	public double exponentielle(float lambda) {
@@ -14,4 +16,6 @@ public class Probabilite
 		
 		return (int)rand.nextDouble() * (max - min) + min;
 	}
+	
+
 }

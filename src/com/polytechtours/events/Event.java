@@ -43,4 +43,17 @@ public abstract class Event implements Comparable<Event> {
 	public int convertMinuteToSecond(int minute) {
 		return minute * 60;
 	}
+	/**
+	 * @author Amine 
+	 * @param var
+	 */
+	public void MiseaJourAires(Variables var)
+	{
+		var.AireTempsInactivite += (var.DateSimu - getDate())*(var.N - var.Nt - var.Nc);
+		var.AireQc += var.Qc * (var.DateSimu - getDate());
+		var.AireQt += var.Qt * (var.DateSimu - getDate());
+		var.AireNc += var.Nc * (var.DateSimu - getDate());
+		var.AireNt += var.Nt * (var.DateSimu - getDate());
+
+	}
 }
