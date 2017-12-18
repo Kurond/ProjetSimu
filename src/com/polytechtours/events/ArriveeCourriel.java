@@ -17,8 +17,8 @@ public class ArriveeCourriel extends Event{
 
         if(getDate() >= convertHourToSecond(8) && getDate() < convertHourToSecond(9)){
             ArriveeCourriel arriveeCourriel = new ArriveeCourriel();
-            int date = (int)convertMinuteToSecond(probabilite.exponentielle(0.5f))* + getDate();
-            //System.out.println("Expo : " + );
+            int date = (int)convertMinuteToSecond(probabilite.exponentielle(0.5f)) + getDate();
+            System.out.println("Expo : " + convertMinuteToSecond(probabilite.exponentielle(0.5f)) + " " +  getDate());
             arriveeCourriel.setDate(date);
             Echeancier.getInstance().ajouterEvenement(arriveeCourriel);
         } else {
