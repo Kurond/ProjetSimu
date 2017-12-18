@@ -7,6 +7,8 @@ public class FinAppel extends Event{
 
 	@Override
 	public void execute(Variables variables) {
+		System.out.println("Fin Appel : " + getDate());
+		
 		MiseaJourAires(variables);
 		
 		// Si la file d'appel est vide
@@ -19,10 +21,10 @@ public class FinAppel extends Event{
 				variables.Nc += 1;
 				
 				// Inserer l'evenement Acces courriel
-				/*AccesCouriel accCour = new AccesCouriel();
+				AccesCouriel accCour = new AccesCouriel();
 				accCour.setDate(getDate());
 				
-				Echeancier.getInstance().ajouterEvenement(accCour);*/
+				Echeancier.getInstance().ajouterEvenement(accCour);
 			}
 		} 
 		// Si la file d'appel n'est pas vide

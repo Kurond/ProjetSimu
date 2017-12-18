@@ -2,12 +2,17 @@ package com.polytechtours.events;
 
 import com.polytechtours.systeme.Echeancier;
 import com.polytechtours.systeme.Variables;
-
+/**
+ * 
+ * @author Amine
+ *
+ */
 public class FinCourriel extends Event{
 
 	@Override
 	public void execute(Variables variables) {
-		// TODO Auto-generated method stub
+		System.out.println("Fin Courriel : " + getDate());
+
 		MiseaJourAires(variables);
 		
 		AccesAppel accesapp = new AccesAppel();

@@ -30,6 +30,9 @@ public class Debut extends Event{
 		variables.Nt = 0;
 		variables.Nc = 0;
 		
+		variables.N = 15;
+		variables.Ntmax = 10;
+		
 		variables.DateSimu = (int)convertHourToSecond(8);
 		variables.DDateSimu =(int)convertHourToSecond(8);
 		

@@ -23,6 +23,10 @@ public class Variables
    
    @Override
    public String toString() {
-	   return "Simu termineee : " + N + "; " + Nt; 
+	   return "AireQt : " + AireQt + "\n" +
+			   "AireQc : " + AireQc + "\n" +
+			   "AireNt : " + AireNt + "\n" +
+			   "AireNc : " + AireNc + "\n" +
+			   "AireTempsInactivite : " + AireTempsInactivite + "\n"; 
    }
 }
