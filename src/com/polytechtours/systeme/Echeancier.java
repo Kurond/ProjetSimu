@@ -21,8 +21,15 @@ public class Echeancier {
     }
     
     public Event retirerEvenement(){
-        Event retour = this.events.get(0);
-        this.events.remove(retour);
+    	Event retour = null;
+    	
+    	try {
+    		retour = this.events.get(0);
+    		this.events.remove(retour);
+    	} catch(IndexOutOfBoundsException e) {
+    		retour = null;
+    	}
+    	
     	return retour;
     }
 
