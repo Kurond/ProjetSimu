@@ -22,12 +22,12 @@ public class Systeme {
 		while(((evenement = echeancier.retirerEvenement()) != null) && !(evenement instanceof Fin)){
 			evenement.execute(vars);
 			
-			try {
+			/*try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
+			}*/
 			//System.out.println("execute event at date " + evenement.getDate());
 			
 			/*if (evenement instanceof Debut) {
