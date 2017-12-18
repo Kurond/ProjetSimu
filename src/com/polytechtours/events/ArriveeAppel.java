@@ -28,7 +28,7 @@ public class ArriveeAppel extends Event {
 
         if((variables.Nt < variables.Ntmax) && (variables.N - variables.Nt - variables.Nc > 0)){
             variables.Nt ++;
-            // ajouter accés Appel
+            MiseaJourAires(variables);
         }
 
         variables.Qt ++;

@@ -46,7 +46,9 @@ public class Debut extends Event{
 		
 		
 		//ajouter l'event fin
-		
+		Fin fin = new Fin();
+		fin.setDate((int)convertHourToSecond(12));
+		echancier.ajouterEvenement(fin);
 	}
 
 	

@@ -1,9 +1,6 @@
 package com.polytechtours.systeme;
 
-import com.polytechtours.events.ArriveeAppel;
-import com.polytechtours.events.ArriveeCourriel;
-import com.polytechtours.events.Debut;
-import com.polytechtours.events.Event;
+import com.polytechtours.events.*;
 
 /**
  * 
@@ -22,7 +19,7 @@ public class Systeme {
 		
 		System.out.println("init");
 		Event evenement;
-		while((evenement = echeancier.retirerEvenement()) != null) {
+		while(((evenement = echeancier.retirerEvenement()) != null) && (evenement instanceof Fin)){
 			evenement.execute(vars);
 			
 			try {
