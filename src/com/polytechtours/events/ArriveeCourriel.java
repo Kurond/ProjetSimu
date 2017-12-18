@@ -15,15 +15,14 @@ public class ArriveeCourriel extends Event{
     	
         Probabilite probabilite = new Probabilite();
 
-        // TODO : change exponentiell
-        if(getDate() >= 28800 && getDate() <= 32400){
+        if(getDate() >= convertHourToSecond(8) && getDate() < convertHourToSecond(9)){
             ArriveeCourriel arriveeCourriel = new ArriveeCourriel();
-            int date = (int)convertMinuteToSecond(probabilite.exponentielle(5)) + getDate();
+            int date = (int)convertMinuteToSecond(probabilite.exponentielle(0.5f))* + getDate();
             arriveeCourriel.setDate(date);
             Echeancier.getInstance().ajouterEvenement(arriveeCourriel);
-        }else {
+        } else {
             ArriveeCourriel arriveeCourriel = new ArriveeCourriel();
-            int date = (int)convertMinuteToSecond(probabilite.exponentielle(30)) + getDate();
+            int date = (int)convertMinuteToSecond(probabilite.exponentielle(5)) + getDate();
             arriveeCourriel.setDate(date);
             Echeancier.getInstance().ajouterEvenement(arriveeCourriel);
         }
@@ -31,7 +30,7 @@ public class ArriveeCourriel extends Event{
         variables.NbCourriel++;
         MiseaJourAires(variables);
         
-        if(variables.N - variables.Nt - variables.Nc > 0){
+        if(variables.N - variables.Nt - variables.Nc > 0) {
             variables.Nc ++;
 
             AccesCouriel accCour = new AccesCouriel();
@@ -40,7 +39,7 @@ public class ArriveeCourriel extends Event{
             Echeancier.getInstance().ajouterEvenement(accCour);
         }
 
-        variables.Qc ++;
+        variables.Qc++;
         variables.DDateSimu = variables.DateSimu;
     }
 }

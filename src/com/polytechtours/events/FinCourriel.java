@@ -22,8 +22,9 @@ public class FinCourriel extends Event{
 		{
 			if(variables.Nt < variables.Ntmax)
 			{
-				variables.Nc = variables.Nc - 1;
-				variables.Nt = variables.Nt - 1;
+				variables.Nc--;
+				variables.Nt++;
+				
 				accesapp.setDate(getDate());
 				Echeancier.getInstance().ajouterEvenement(accesapp);
 			}
@@ -32,7 +33,7 @@ public class FinCourriel extends Event{
 		{
 			if(variables.Qc == 0)
 			{
-				variables.Nc -= 1;
+				variables.Nc--;
 			}
 			else
 			{
@@ -40,8 +41,8 @@ public class FinCourriel extends Event{
 				Echeancier.getInstance().ajouterEvenement(accescouriel);
 			}
 		}
-		variables.DDateSimu = variables.DateSimu;
 		
+		variables.DDateSimu = variables.DateSimu;	
 	}
 
 }

@@ -14,16 +14,15 @@ public class FinAppel extends Event{
 		// Si la file d'appel est vide
 		if (variables.Qt == 0) {
 			// Changer le status du téléconseiller
-			variables.Nt -= 1;
+			variables.Nt--;
 			
 			// Si la file des courriel est non vide
 			if (variables.Qc != 0) {
-				variables.Nc += 1;
+				variables.Nc++;
 				
 				// Inserer l'evenement Acces courriel
 				AccesCouriel accCour = new AccesCouriel();
 				accCour.setDate(getDate());
-				
 				Echeancier.getInstance().ajouterEvenement(accCour);
 			}
 		} 
@@ -32,7 +31,6 @@ public class FinAppel extends Event{
 			// Inserer l'evenement Acces Appel		
 			AccesAppel accAppel = new AccesAppel();
 			accAppel.setDate(getDate());
-			
 			Echeancier.getInstance().ajouterEvenement(accAppel);
 		}
 		

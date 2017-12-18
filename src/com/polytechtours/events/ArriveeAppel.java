@@ -13,30 +13,31 @@ public class ArriveeAppel extends Event {
         ArriveeAppel arriveeAppel = new ArriveeAppel();
 
         if((getDate() >= convertHourToSecond(8)) && (getDate() < convertHourToSecond(9))) {
-            arriveeAppel.setDate(getDate() + (int)convertMinuteToSecond(probabilite.exponentielle((float)(5))));
+        	int date = (int) convertMinuteToSecond(probabilite.exponentielle(5));
+            arriveeAppel.setDate(getDate() + date);
             Echeancier.getInstance().ajouterEvenement(arriveeAppel);
-        } else if((getDate() >= convertHourToSecond(9)) && (getDate() < convertHourToSecond(11))) {
-            arriveeAppel.setDate(getDate() + (int)convertMinuteToSecond(probabilite.exponentielle((float)(1))));
+        } else if ((getDate() >= convertHourToSecond(9)) && (getDate() < convertHourToSecond(11))) {
+        	int date = (int) convertMinuteToSecond(probabilite.exponentielle(1));
+            arriveeAppel.setDate(getDate() + date);
             Echeancier.getInstance().ajouterEvenement(arriveeAppel);
         } else {
-            arriveeAppel.setDate(getDate() + (int)convertMinuteToSecond(probabilite.exponentielle((float)(10))));
+        	int date = (int) convertMinuteToSecond(probabilite.exponentielle(10));
+            arriveeAppel.setDate(getDate() + date);
             Echeancier.getInstance().ajouterEvenement(arriveeAppel);
         }
         
-        variables.NbAppel ++;
-
+        variables.NbAppel++;
         MiseaJourAires(variables);
 
-        if((variables.Nt < variables.Ntmax) && (variables.N - variables.Nt - variables.Nc > 0)){
-            variables.Nt ++;
+        if((variables.Nt < variables.Ntmax) && (variables.N - variables.Nt - variables.Nc > 0)) {
+            variables.Nt++;
             
             AccesAppel accAppel = new AccesAppel();
             accAppel.setDate(getDate());
-            
             Echeancier.getInstance().ajouterEvenement(accAppel);
         }
 
-        variables.Qt ++;
+        variables.Qt++;
         variables.DDateSimu = variables.DateSimu;
     }
 
