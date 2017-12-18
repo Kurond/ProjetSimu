@@ -8,6 +8,8 @@ public class AccesCouriel extends Event{
 	@Override
 	public void execute(Variables variables) {
 		// TODO Auto-generated method stub
+		System.out.println("Acces Courriel : " + getDate());
+		
 		MiseaJourAires(variables);
 		
     	Probabilite probabilite = new Probabilite();

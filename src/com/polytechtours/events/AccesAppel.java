@@ -16,6 +16,8 @@ public class AccesAppel extends Event {
      */
     @Override
     public void execute(Variables variables) {
+    	System.out.println("Acces Appel : " + getDate());
+    	
         MiseaJourAires(variables);
         Probabilite probabilite = new Probabilite();
         FinAppel finAppel = new FinAppel();

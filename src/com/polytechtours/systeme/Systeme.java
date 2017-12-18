@@ -19,7 +19,7 @@ public class Systeme {
 		
 		System.out.println("init");
 		Event evenement;
-		while(((evenement = echeancier.retirerEvenement()) != null) && (evenement instanceof Fin)){
+		while(((evenement = echeancier.retirerEvenement()) != null) && !(evenement instanceof Fin)){
 			evenement.execute(vars);
 			
 			try {

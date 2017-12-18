@@ -6,6 +6,7 @@ public class Fin extends Event {
 
     @Override
     public void execute(Variables variables) {
+    	System.out.println("Fin : " + getDate());
         MiseaJourAires(variables);
     }
 }
