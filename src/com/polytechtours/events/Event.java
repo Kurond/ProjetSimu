@@ -37,11 +37,11 @@ public abstract class Event implements Comparable<Event> {
 	}
 
 	public static double convertHourToSecond(double heure) {
-		return heure * 3600;
+		return (int) heure * 3600;
 	}
 
-	public double convertMinuteToSecond(double minute) {
-		return minute * 60;
+	public int convertMinuteToSecond(double minute) {
+		return (int)(minute * 60);
 	}
 	/**
 	 * @author Amine 

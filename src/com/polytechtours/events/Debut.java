@@ -20,7 +20,7 @@ public class Debut extends Event{
 		System.out.println("Debut : " + getDate());
 		
 		// TODO Auto-generated method stub
-		Probabilite p =new Probabilite();
+		Probabilite p = new Probabilite();
 		Echeancier echancier = Echeancier.getInstance();
 		//Couriel arrivant au debut de la simu
 		variables.Qc = p.uniform(20, 80);
@@ -34,9 +34,7 @@ public class Debut extends Event{
 		variables.Ntmax = 10;
 		
 		variables.DateSimu = (int)convertHourToSecond(8);
-		variables.DDateSimu =(int)convertHourToSecond(8);
-		
-		
+		variables.DDateSimu =(int)convertHourToSecond(8);	
 		
 		//ajouter les events 
 		ArriveeAppel arrapp = new ArriveeAppel();

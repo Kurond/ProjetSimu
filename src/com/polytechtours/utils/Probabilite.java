@@ -17,7 +17,7 @@ public class Probabilite
 	public int uniform(int min, int max) {
 		Random rand = new Random();
 		
-		return (int)rand.nextDouble() * (max - min) + min;
+		return (int)(rand.nextDouble() * (max - min) + min);
 	}
 	
 
