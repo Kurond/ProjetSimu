@@ -6,6 +6,6 @@ public class Fin extends Event {
 
     @Override
     public void execute(Variables variables) {
-
+        MiseaJourAires(variables);
     }
 }
