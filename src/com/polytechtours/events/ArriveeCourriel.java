@@ -11,20 +11,22 @@ public class ArriveeCourriel extends Event{
 
     @Override
     public void execute(Variables variables) {
-
+    	System.out.println("Courriel : " + getDate());
+    	
         Probabilite probabilite = new Probabilite();
 
         if(getDate() >= 28800 && getDate() <= 32400){
             ArriveeCourriel arriveeCourriel = new ArriveeCourriel();
-            int date = (int)probabilite.exponentielle(convertMinuteToSecond(5)) + getDate();
+            int date = (int)convertMinuteToSecond(probabilite.exponentielle(5)) + getDate();
             arriveeCourriel.setDate(date);
             Echeancier.getInstance().ajouterEvenement(arriveeCourriel);
         }else {
             ArriveeCourriel arriveeCourriel = new ArriveeCourriel();
-            int date = (int)probabilite.exponentielle(30) + getDate();
+            int date = (int)convertMinuteToSecond(probabilite.exponentielle(30)) + getDate();
             arriveeCourriel.setDate(date);
             Echeancier.getInstance().ajouterEvenement(arriveeCourriel);
         }
+        
         //mettre a jour les aires
         if(variables.N - variables.Nt - variables.Nc > 0){
             variables.Nc ++;
@@ -32,5 +34,6 @@ public class ArriveeCourriel extends Event{
         }
 
         variables.Qc ++;
+        variables.DDateSimu = variables.DateSimu;
     }
 }

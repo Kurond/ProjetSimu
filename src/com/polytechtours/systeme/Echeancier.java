@@ -16,6 +16,8 @@ public class Echeancier {
     }
 
     public void ajouterEvenement(Event evenement) {
+    	//System.out.println("Date : " + evenement.getDate());
+    	
     	this.events.add(evenement);
     	Collections.sort(events);
     }

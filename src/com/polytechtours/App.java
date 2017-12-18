@@ -4,14 +4,15 @@ package com.polytechtours;
 import com.polytechtours.events.*;
 import com.polytechtours.systeme.Echeancier;
 import com.polytechtours.systeme.Systeme;
+import com.polytechtours.utils.Probabilite;
 
 /**
  * Hello world!
  *
  */
 public class App {
-    public static void main( String[] args ) {
-        Systeme sys = new Systeme();
+    public static void main( String[] args ) {    	
+    	Systeme sys = new Systeme();
     	/*Echeancier eche = Echeancier.getInstance();
         
         Debut evenementDebut = new Debut();

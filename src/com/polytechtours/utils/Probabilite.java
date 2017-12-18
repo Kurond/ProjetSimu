@@ -6,7 +6,10 @@ public class Probabilite
 {
 	public double exponentielle(float lambda) {
 		Random rand = new Random();
-	    return -(1 / lambda) * Math.log( 1 - rand.nextDouble() );
+		double test = rand.nextDouble();
+		//System.out.println(test);
+	    return -(1 / lambda) * Math.log( 1 - test );
+		//return lambda * Math.exp(-lambda * test);
 	}
 	
 	public int uniform(int min, int max) {

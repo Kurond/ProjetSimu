@@ -12,6 +12,8 @@ public class Debut extends Event{
 
 	@Override
 	public void execute(Variables variables) {
+		System.out.println("Debut : " + getDate());
+		
 		// TODO Auto-generated method stub
 		Probabilite p =new Probabilite();
 		Echeancier echancier = Echeancier.getInstance();
@@ -23,8 +25,10 @@ public class Debut extends Event{
 		variables.Nt = 0;
 		variables.Nc = 0;
 		
-		variables.DateSimu = convertHourToSecond(8);
-		variables.DDateSimu =convertHourToSecond(8);
+		variables.DateSimu = (int)convertHourToSecond(8);
+		variables.DDateSimu =(int)convertHourToSecond(8);
+		
+		
 		
 		//ajouter les events 
 		ArriveeAppel arrapp = new ArriveeAppel();
@@ -32,7 +36,7 @@ public class Debut extends Event{
 		echancier.ajouterEvenement(arrapp);
 		
 		ArriveeCourriel arrcouriel = new ArriveeCourriel();
-		arrapp.setDate(variables.DateSimu);
+		arrcouriel.setDate(variables.DateSimu);
 		echancier.ajouterEvenement(arrcouriel);
 		
 		//ajouter l'event fin
