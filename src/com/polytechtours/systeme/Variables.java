@@ -1,5 +1,7 @@
 package com.polytechtours.systeme;
 
+import com.polytechtours.events.Event;
+
 public class Variables
 {
    public int N;
@@ -22,13 +24,17 @@ public class Variables
    
    @Override
    public String toString() {
-	   return "Simulation terminee : \nNombre de teleconseiller" + N + "; Nombre de poste telephonique :" + Ntmax +
+	   return "Simulation terminee : \nNombre de conseiller" + N + "; Nombre de poste telephonique :" + Ntmax +
                "\n -----------------------------------------------" +
                "\n -------------------Resultat--------------------" +
                "\n -----------------------------------------------" +
-               "\n Nombre de courrier non traite : " + Nc +
-               "\n Temps d'attente des clients au telephone : " + AireQt +
-               "\n Delai de reponse aux courriels : " + (AireQc + AireNc);
+               "\nNombre de courrier non traite : " + Nc +
+               "\nTemps d'attente des clients au telephone : " + AireQt +
+               "\nDelai de reponse aux courriels : " + (AireQc + AireNc) +
+               "\nTaux d'occupation des conseillers : " + ((AireNt + AireNc) / ((Event.convertHourToSecond(12) -
+                - Event.convertHourToSecond(8)) * N)) + "%" +
+               "\nTaux d'occupation des postes telephoniques : " + (AireNt / ((Event.convertHourToSecond(12) -
+               - Event.convertHourToSecond(8)) * Ntmax)) + "%";
 
    }
 }

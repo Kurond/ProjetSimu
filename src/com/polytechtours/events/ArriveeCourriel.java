@@ -19,6 +19,7 @@ public class ArriveeCourriel extends Event{
     	int date;
         if(getDate() >= convertHourToSecond(8) && getDate() < convertHourToSecond(9)){
             date = (int)convertMinuteToSecond(exponentielle(0.5f))* + getDate();
+            //System.out.println("Expo : " + convertMinuteToSecond(exponentielle(0.5f)) + " " +  getDate());
         } else {
             date = (int)convertMinuteToSecond(exponentielle(5)) + getDate();
         }

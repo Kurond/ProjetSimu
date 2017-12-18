@@ -36,8 +36,8 @@ public abstract class Event implements Comparable<Event> {
 		this.date = date;
 	}
 
-	public int convertHourToSecond(double heure) {
-		return (int) (heure * 3600);
+	public static int convertHourToSecond(double heure) {
+		return (int) heure * 3600;
 	}
 
 	public int convertMinuteToSecond(double minute) {
@@ -54,5 +54,6 @@ public abstract class Event implements Comparable<Event> {
 		var.AireQt += var.Qt * (getDate() - var.DDateSimu);
 		var.AireNc += var.Nc * (getDate() - var.DDateSimu);
 		var.AireNt += var.Nt * (getDate() - var.DDateSimu);
+
 	}
 }
