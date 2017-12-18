@@ -7,7 +7,7 @@ import com.polytechtours.utils.Probabilite;
 public class ArriveeAppel extends Event {
     @Override
     public void execute(Variables variables) {
-    	System.out.println("Appel : " + getDate());
+    	System.out.println("Arrivée Appel : " + getDate());
     	
     	Probabilite probabilite = new Probabilite();
         ArriveeAppel arriveeAppel = new ArriveeAppel();
@@ -22,16 +22,22 @@ public class ArriveeAppel extends Event {
             arriveeAppel.setDate(getDate() + (int)convertMinuteToSecond(probabilite.exponentielle((float)(10))));
             Echeancier.getInstance().ajouterEvenement(arriveeAppel);
         }
+        
         variables.NbAppel ++;
 
-        //mettre Ã  jour les aires
+        MiseaJourAires(variables);
 
         if((variables.Nt < variables.Ntmax) && (variables.N - variables.Nt - variables.Nc > 0)){
             variables.Nt ++;
-            MiseaJourAires(variables);
+            
+            AccesAppel accAppel = new AccesAppel();
+            accAppel.setDate(getDate());
+            
+            Echeancier.getInstance().ajouterEvenement(accAppel);
         }
 
         variables.Qt ++;
+        variables.DDateSimu = variables.DateSimu;
     }
 
 

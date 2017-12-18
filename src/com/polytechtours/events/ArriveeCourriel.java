@@ -11,10 +11,11 @@ public class ArriveeCourriel extends Event{
 
     @Override
     public void execute(Variables variables) {
-    	System.out.println("Courriel : " + getDate());
+    	System.out.println("Arrivée Courriel : " + getDate());
     	
         Probabilite probabilite = new Probabilite();
 
+        // TODO : change exponentiell
         if(getDate() >= 28800 && getDate() <= 32400){
             ArriveeCourriel arriveeCourriel = new ArriveeCourriel();
             int date = (int)convertMinuteToSecond(probabilite.exponentielle(5)) + getDate();
@@ -27,10 +28,16 @@ public class ArriveeCourriel extends Event{
             Echeancier.getInstance().ajouterEvenement(arriveeCourriel);
         }
         
-        //mettre a jour les aires
+        variables.NbCourriel++;
+        MiseaJourAires(variables);
+        
         if(variables.N - variables.Nt - variables.Nc > 0){
             variables.Nc ++;
-            MiseaJourAires(variables);
+
+            AccesCouriel accCour = new AccesCouriel();
+            accCour.setDate(getDate());
+            
+            Echeancier.getInstance().ajouterEvenement(accCour);
         }
 
         variables.Qc ++;
