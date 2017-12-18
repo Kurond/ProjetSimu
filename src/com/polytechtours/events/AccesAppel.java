@@ -22,7 +22,7 @@ public class AccesAppel extends Event {
         Probabilite probabilite = new Probabilite();
         FinAppel finAppel = new FinAppel();
 
-        int date = (int)convertMinuteToSecond(probabilite.uniform(5,15)) + getDate();
+        int date = (int)(probabilite.uniform(convertMinuteToSecond(5),convertMinuteToSecond(15))) + getDate();
         finAppel.setDate(date);
         Echeancier.getInstance().ajouterEvenement(finAppel);
         

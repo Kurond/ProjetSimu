@@ -16,7 +16,7 @@ public class AccesCouriel extends Event{
     	Probabilite probabilite = new Probabilite();
     	
 		FinCourriel finCouriel = new FinCourriel();
-		finCouriel.setDate(getDate() + (int)convertMinuteToSecond(probabilite.uniform(3, 7)));
+		finCouriel.setDate(getDate() + (int)probabilite.uniform(convertMinuteToSecond(3), convertMinuteToSecond(7)));
 		Echeancier.getInstance().ajouterEvenement(finCouriel);
 		
 		variables.Qc--;
