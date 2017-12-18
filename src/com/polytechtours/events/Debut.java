@@ -4,6 +4,11 @@ import com.polytechtours.systeme.Echeancier;
 import com.polytechtours.systeme.Variables;
 import com.polytechtours.utils.Probabilite;
 
+/**
+ * 
+ * @author Amine
+ *
+ */
 public class Debut extends Event{
 
 	public Debut() {
@@ -38,6 +43,7 @@ public class Debut extends Event{
 		ArriveeCourriel arrcouriel = new ArriveeCourriel();
 		arrcouriel.setDate(variables.DateSimu);
 		echancier.ajouterEvenement(arrcouriel);
+		
 		
 		//ajouter l'event fin
 		

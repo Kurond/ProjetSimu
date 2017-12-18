@@ -13,6 +13,13 @@ public class Variables
    public int TempsInactivite;
    public int DateSimu;
    public int DDateSimu;
+   public int AireQt;
+   public int AireQc;
+   public int AireNt;
+   public int AireNc;
+   public int AireTempsInactivite;
+
+   
    
    @Override
    public String toString() {
