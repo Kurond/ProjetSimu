@@ -36,7 +36,7 @@ public abstract class Event implements Comparable<Event> {
 		this.date = date;
 	}
 
-	public static double convertHourToSecond(double heure) {
+	public static int convertHourToSecond(double heure) {
 		return (int) heure * 3600;
 	}
 
