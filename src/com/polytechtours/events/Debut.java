@@ -22,15 +22,21 @@ public class Debut extends Event{
 		variables.NbAppel = variables.Qt;
 		variables.Nt = 0;
 		variables.Nc = 0;
-		// a mettre quand Antoine a fini 
-		//variables.DateSimu =
-		//a mettre aussi apres
-		//variables.DDateSimu =;
-		//ajouter les events une fois implémenter
 		
-		// faire set date pour mettre la date d'arrivé de l'event;
+		variables.DateSimu = convertHourToSecond(8);
+		variables.DDateSimu =convertHourToSecond(8);
 		
-		//echancier.ajouterEvenement(evenement);
+		//ajouter les events 
+		ArriveeAppel arrapp = new ArriveeAppel();
+		arrapp.setDate(variables.DateSimu);
+		echancier.ajouterEvenement(arrapp);
+		
+		ArriveeCourriel arrcouriel = new ArriveeCourriel();
+		arrapp.setDate(variables.DateSimu);
+		echancier.ajouterEvenement(arrcouriel);
+		
+		//ajouter l'event fin
+		
 	}
 
 	
