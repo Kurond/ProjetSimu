@@ -15,8 +15,8 @@ public class AccesCouriel extends Event{
 		
     	Probabilite probabilite = new Probabilite();
 		AccesCouriel accescouriel = new AccesCouriel();
-		
-		accescouriel.setDate(getDate() + (int)convertMinuteToSecond(probabilite.uniform(3, 7)));
+		int date = probabilite.uniform(convertMinuteToSecond(3),convertMinuteToSecond(7)) + getDate();
+		accescouriel.setDate(date);
 		Echeancier.getInstance().ajouterEvenement(accescouriel);
 		variables.Qc = variables.Qc - 1;
 		variables.DDateSimu = variables.DateSimu;		
