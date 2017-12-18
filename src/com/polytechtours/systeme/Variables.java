@@ -13,4 +13,9 @@ public class Variables
    public int TempsInactivite;
    public int DateSimu;
    public int DDateSimu;
+   
+   @Override
+   public String toString() {
+	   return "Simu termineee : " + N + "; " + Nt; 
+   }
 }
