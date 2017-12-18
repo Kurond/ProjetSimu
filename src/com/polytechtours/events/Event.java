@@ -49,11 +49,11 @@ public abstract class Event implements Comparable<Event> {
 	 */
 	public void MiseaJourAires(Variables var)
 	{
-		var.AireTempsInactivite += (var.DateSimu - getDate())*(var.N - var.Nt - var.Nc);
-		var.AireQc += var.Qc * (var.DateSimu - getDate());
-		var.AireQt += var.Qt * (var.DateSimu - getDate());
-		var.AireNc += var.Nc * (var.DateSimu - getDate());
-		var.AireNt += var.Nt * (var.DateSimu - getDate());
+		var.AireTempsInactivite += (getDate() - var.DDateSimu)*(var.N - var.Nt - var.Nc);
+		var.AireQc += var.Qc * (getDate() - var.DDateSimu);
+		var.AireQt += var.Qt * (getDate() - var.DDateSimu);
+		var.AireNc += var.Nc * (getDate() - var.DDateSimu);
+		var.AireNt += var.Nt * (getDate() - var.DDateSimu);
 
 	}
 }
