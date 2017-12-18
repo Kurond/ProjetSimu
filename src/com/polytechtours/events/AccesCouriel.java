@@ -14,10 +14,10 @@ public class AccesCouriel extends Event{
 		MiseaJourAires(variables);
 		
     	Probabilite probabilite = new Probabilite();
-		AccesCouriel accescouriel = new AccesCouriel();
-		int date = probabilite.uniform(convertMinuteToSecond(3),convertMinuteToSecond(7)) + getDate();
-		accescouriel.setDate(date);
-		Echeancier.getInstance().ajouterEvenement(accescouriel);
+		FinCourriel finCouriel = new FinCourriel();
+        int date = probabilite.uniform(convertMinuteToSecond(3),convertMinuteToSecond(7)) + getDate();
+		finCouriel.setDate(date);
+		Echeancier.getInstance().ajouterEvenement(finCouriel);
 		variables.Qc = variables.Qc - 1;
 		variables.DDateSimu = variables.DateSimu;		
 	}
