@@ -10,7 +10,6 @@ public class Variables
    public int Qc;
    public int NbAppel;
    public int NbCourriel;
-   public int TempsInactivite;
    public int DateSimu;
    public int DDateSimu;
    public int AireQt;
@@ -23,6 +22,13 @@ public class Variables
    
    @Override
    public String toString() {
-	   return "Simu termineee : " + N + "; " + Nt; 
+	   return "Simulation terminee : \nNombre de teleconseiller" + N + "; Nombre de poste telephonique :" + Ntmax +
+               "\n -----------------------------------------------" +
+               "\n -------------------Resultat--------------------" +
+               "\n -----------------------------------------------" +
+               "\n Nombre de courrier non traite : " + Nc +
+               "\n Temps d'attente des clients au telephone : " + AireQt +
+               "\n Delai de reponse aux courriels : " + (AireQc + AireNc);
+
    }
 }
