@@ -24,7 +24,7 @@ public class Systeme {
 			if(evenement != null){
 				evenement.execute(vars);
 			}
-		}while (!(evenement instanceof  Fin));
+		}while (!(evenement instanceof  Fin) && evenement != null);
 
 		System.out.println(vars.toString());
 	}
