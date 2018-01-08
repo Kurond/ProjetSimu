@@ -19,7 +19,10 @@ public class Variables
    public int AireNc;
    public int AireTempsInactivite;
 
-   
+
+   public double convertsecondToMinute(double seconde) {
+      return seconde / 60;
+   }
 
    public String toString() {
          float AireN = AireNt + AireNc;
@@ -34,9 +37,11 @@ public class Variables
                "\n -----------------------------------------------" +
                "\n -------------------Resultat--------------------" +
                "\n -----------------------------------------------" +
+               "\nNombre de courrier : " + NbCourriel +
+               "\nNombre d'appel : " + NbAppel +
                "\nNombre de courrier non traite : " + Qc +
-               "\nTemps d'attente des clients au telephone : " + AireQt +"s"+
-               "\nDelai de reponse aux courriels : " + (AireQc + AireNc) + "s"+
+               "\nTemps d'attente des clients au telephone : " + convertsecondToMinute(AireQt) +"min"+
+               "\nDelai de reponse aux courriels : " + convertsecondToMinute(AireQc + AireNc) + "min"+
                "\nTaux d'occupation des conseillers : " + res + "%" +
                "\nTaux d'occupation des postes telephoniques : " + res2 + "%";
 
