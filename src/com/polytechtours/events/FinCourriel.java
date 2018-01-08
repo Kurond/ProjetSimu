@@ -2,6 +2,9 @@ package com.polytechtours.events;
 
 import com.polytechtours.systeme.Echeancier;
 import com.polytechtours.systeme.Variables;
+
+import static com.polytechtours.events.EventsFactory.make_dated;
+
 /**
  * 
  * @author Amine
@@ -25,8 +28,7 @@ public class FinCourriel extends Event{
 				variables.Nc--;
 				variables.Nt++;
 				
-				accesapp.setDate(getDate());
-				Echeancier.getInstance().ajouterEvenement(accesapp);
+				Echeancier.getInstance().ajouterEvenement(make_dated(accesapp, getDate()));
 			}
 		}
 		else
@@ -38,11 +40,11 @@ public class FinCourriel extends Event{
 			else
 			{
 				accescouriel.setDate(getDate());
-				Echeancier.getInstance().ajouterEvenement(accescouriel);
+				Echeancier.getInstance().ajouterEvenement(make_dated(accescouriel, getDate()));
 			}
 		}
 		
-		variables.DDateSimu = variables.DateSimu;	
+		variables.DDateSimu = getDate();
 	}
 
 }

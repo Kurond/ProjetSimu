@@ -15,18 +15,18 @@ public class ArriveeCourriel extends Event{
     @Override
     public void execute(Variables variables) {
     	System.out.println("Arriv�e Courriel : " + getDate());
-
+        MiseaJourAires(variables);
     	int date;
         if(getDate() >= convertHourToSecond(8) && getDate() < convertHourToSecond(9)){
-            date = (int)convertMinuteToSecond(exponentielle(0.5f))* + getDate();
+            date = convertMinuteToSecond(exponentielle(0.5f)) + getDate();
             //System.out.println("Expo : " + convertMinuteToSecond(exponentielle(0.5f)) + " " +  getDate());
         } else {
-            date = (int)convertMinuteToSecond(exponentielle(5)) + getDate();
+            date = convertMinuteToSecond(exponentielle(5)) + getDate();
         }
         Echeancier.getInstance().ajouterEvenement(make_dated(new ArriveeCourriel(), date));
         
         variables.NbCourriel++;
-        MiseaJourAires(variables);
+
         
         if(variables.N - variables.Nt - variables.Nc > 0) {
             variables.Nc ++;
@@ -35,6 +35,6 @@ public class ArriveeCourriel extends Event{
         }
 
         variables.Qc++;
-        variables.DDateSimu = variables.DateSimu;
+        variables.DDateSimu = getDate();
     }
 }

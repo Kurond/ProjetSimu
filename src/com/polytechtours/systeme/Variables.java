@@ -12,7 +12,6 @@ public class Variables
    public int Qc;
    public int NbAppel;
    public int NbCourriel;
-   public int DateSimu;
    public int DDateSimu;
    public int AireQt;
    public int AireQc;
@@ -21,20 +20,25 @@ public class Variables
    public int AireTempsInactivite;
 
    
-   
-   @Override
+
    public String toString() {
-	   return "Simulation terminee : \nNombre de conseiller" + N + "; Nombre de poste telephonique :" + Ntmax +
+         float AireN = AireNt + AireNc;
+         float AireTotalN = (Event.convertHourToSecond(12)
+              - Event.convertHourToSecond(8)) * N;
+         float res = (AireN / AireTotalN) * 100;
+         float AireTotalNtmax = ((Event.convertHourToSecond(12) - Event.convertHourToSecond(8)) * Ntmax);
+         float res2 = (AireNt / AireTotalNtmax) * 100 ;
+
+
+	   return "Simulation terminee : \nNombre de conseillers : " + N + "; Nombre de postes telephoniques :" + Ntmax +
                "\n -----------------------------------------------" +
                "\n -------------------Resultat--------------------" +
                "\n -----------------------------------------------" +
-               "\nNombre de courrier non traite : " + Nc +
-               "\nTemps d'attente des clients au telephone : " + AireQt +
-               "\nDelai de reponse aux courriels : " + (AireQc + AireNc) +
-               "\nTaux d'occupation des conseillers : " + ((AireNt + AireNc) / ((Event.convertHourToSecond(12) -
-                - Event.convertHourToSecond(8)) * N)) + "%" +
-               "\nTaux d'occupation des postes telephoniques : " + (AireNt / ((Event.convertHourToSecond(12) -
-               - Event.convertHourToSecond(8)) * Ntmax)) + "%";
+               "\nNombre de courrier non traite : " + Qc +
+               "\nTemps d'attente des clients au telephone : " + AireQt +"s"+
+               "\nDelai de reponse aux courriels : " + (AireQc + AireNc) + "s"+
+               "\nTaux d'occupation des conseillers : " + res + "%" +
+               "\nTaux d'occupation des postes telephoniques : " + res2 + "%";
 
    }
 }

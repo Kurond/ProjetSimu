@@ -8,6 +8,6 @@ public class Fin extends Event {
     public void execute(Variables variables) {
     	System.out.println("Fin : " + getDate());
         MiseaJourAires(variables);
-        System.out.println(variables);
+//        System.out.println(variables);
     }
 }

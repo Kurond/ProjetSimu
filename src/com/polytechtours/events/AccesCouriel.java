@@ -21,7 +21,7 @@ public class AccesCouriel extends Event{
 		Echeancier.getInstance().ajouterEvenement(make_dated(new FinCourriel(), date));
 		
 		variables.Qc--;
-		variables.DDateSimu = variables.DateSimu;		
+		variables.DDateSimu = getDate();
 	}
 
 }

@@ -7,7 +7,7 @@ import com.polytechtours.systeme.Variables;
 public class Probabilite 
 {
 	public static double exponentielle(float lambda) {
-		Random rand = new Random();
+		Random rand = new Random(5);
 		double test = rand.nextDouble();
 		//System.out.println(test);
 	    return -(1 / lambda) * Math.log( 1 - test );
@@ -15,7 +15,7 @@ public class Probabilite
 	}
 	
 	public static int uniform(int min, int max) {
-		Random rand = new Random();
+		Random rand = new Random(5);
 		
 		return (int)(rand.nextDouble() * (max - min) + min);
 	}

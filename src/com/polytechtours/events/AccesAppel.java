@@ -28,7 +28,6 @@ public class AccesAppel extends Event {
         Echeancier.getInstance().ajouterEvenement(make_dated(new FinAppel(), date));
         
         variables.Qt--;
-
-        variables.DDateSimu = variables.DateSimu;
+        variables.DDateSimu = getDate();
     }
 }

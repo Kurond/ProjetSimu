@@ -2,6 +2,7 @@ package com.polytechtours.systeme;
 
 import com.polytechtours.events.*;
 
+import static com.polytechtours.events.Event.convertHourToSecond;
 import static com.polytechtours.events.EventsFactory.make_dated;
 
 /**
@@ -14,7 +15,7 @@ public class Systeme {
 		Echeancier echeancier = Echeancier.getInstance();
 		Variables vars = new Variables();
 		
-		echeancier.ajouterEvenement(make_dated(new Debut(),0));
+		echeancier.ajouterEvenement(make_dated(new Debut(), convertHourToSecond(8)));
 		
 		System.out.println("init");
 
